@@ -1,0 +1,14 @@
+{
+  "name": "esm-web",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "serve ./"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "serve": "^14.2.4"
+  }
+}

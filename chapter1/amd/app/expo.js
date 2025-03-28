@@ -8,7 +8,7 @@ define(["app/math"], function (math) {
 });
 
 /*
-// 또는 이렇게도 가능
+// Or like this
 define(function (require) {
   var math = require("app/math");
   return {
