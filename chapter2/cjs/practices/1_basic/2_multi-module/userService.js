@@ -1,4 +1,4 @@
-const notificationService = require('./notificationService.js')
+const notificationService = require("./notificationService.js");
 
 function createUser(name) {
   const user = { id: Date.now(), name };
@@ -8,7 +8,7 @@ function createUser(name) {
 }
 
 function getUserProfile(userId) {
-  return { id: userId, email: 'user@example.com' };
+  return { id: userId, email: "user@example.com" };
 }
 
 module.exports = { createUser, getUserProfile };
