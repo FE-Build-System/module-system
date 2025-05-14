@@ -1,7 +1,6 @@
 {
   "name": "2_typescript",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -9,7 +8,9 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@types/node": "^22.15.17",
+    "@types/lodash": "^4.17.16",
+    "@types/node": "^22.15.18",
+    "lodash": "^4.17.21",
     "typescript": "^5.8.3"
   }
 }

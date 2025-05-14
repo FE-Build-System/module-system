@@ -1,13 +1,11 @@
 {
-  // "files": ["src/esm_index.ts"],
   "compilerOptions": {
     "outDir": "dist",
     "target": "ES2020",
-    "module": "ES2015",
-    "typeRoots": ["./types"],
-    // "declaration": true,
-    "allowUmdGlobalAccess": false,
-    "strict": true
+    "module": "CommonJS",
+    "skipLibCheck": true,
+    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": false
   },
-  "include": ["src/**/*", "types/**/*"]
+  "include": ["src/**/*"]
 }
