@@ -1,8 +1,13 @@
 {
-  "files": ["src/esm_index.ts"],
+  // "files": ["src/esm_index.ts"],
   "compilerOptions": {
     "outDir": "dist",
-    "target": "es2016",
-    "module": "commonjs"
-  }
+    "target": "ES2020",
+    "module": "ES2015",
+    "typeRoots": ["./types"],
+    // "declaration": true,
+    "allowUmdGlobalAccess": false,
+    "strict": true
+  },
+  "include": ["src/**/*", "types/**/*"]
 }
