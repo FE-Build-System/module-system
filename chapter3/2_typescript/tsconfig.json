@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
-    "outDir": "dist",
-    "target": "ES2020",
-    "module": "CommonJS",
-    "skipLibCheck": true,
-    "esModuleInterop": false,
-    "allowSyntheticDefaultImports": false
+    "skipLibCheck": true, // 외부 라이브러리 체크 건너뛰기
+    "outDir": "dist", // 컴파일 결과물 저장 경로
+    "target": "ES2020", // 타겟 버전
+    "module": "UMD" // 모듈 시스템
+    // "esModuleInterop": false, // 모듈 시스템 호환성 비활성화
+    // "allowSyntheticDefaultImports": false // default import 허용 비활성화
   },
   "include": ["src/**/*"]
 }
