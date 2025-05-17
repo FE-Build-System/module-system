@@ -1,4 +1,3 @@
-const userService = require('./userService');
+const { Button } = require('./Button')
 
-const newUser = userService.createUser("Hackurity");
-console.log("Created user:", newUser);
+console.log(Button())

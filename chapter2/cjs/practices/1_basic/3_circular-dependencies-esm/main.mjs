@@ -1,4 +1,3 @@
-import { createUser } from "./userService.mjs";
+import { Button } from './Button.mjs'
 
-const newUser = createUser("Hackurity");
-console.log("Created user:", newUser);
+console.log(Button())
