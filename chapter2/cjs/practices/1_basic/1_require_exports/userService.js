@@ -7,8 +7,4 @@ function createUser(name) {
   return user;
 }
 
-function getUserProfile(userId) {
-  return { id: userId, email: "user@example.com" };
-}
-
-module.exports = { createUser, getUserProfile };
+module.exports = { createUser };
