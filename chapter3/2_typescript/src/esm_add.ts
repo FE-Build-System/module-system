@@ -3,4 +3,6 @@ export const add = (a: number, b: number) => {
 };
 export const test = 123;
 
-export default add;
+export default function () {
+  return "default";
+}
