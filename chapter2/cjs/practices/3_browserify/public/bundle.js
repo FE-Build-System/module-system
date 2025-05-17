@@ -1,40 +1,54 @@
 (function () {
-  function r(e, n, t) {
-    function o(i, f) {
-      if (!n[i]) {
-        if (!e[i]) {
-          var c = "function" == typeof require && require;
-          if (!f && c) return c(i, !0);
-          if (u) return u(i, !0);
-          var a = new Error("Cannot find module '" + i + "'");
-          throw ((a.code = "MODULE_NOT_FOUND"), a);
+  function browserifyRequire(modules, cache, entryModules) {
+    function localRequire(moduleId, jumped) {
+      if (!cache[moduleId]) {
+        if (!modules[moduleId]) {
+          var nodeRequire = typeof require === 'function' && require;
+          if (!jumped && nodeRequire) return nodeRequire(moduleId, true);
+          if (previousRequire) return previousRequire(moduleId, true);
+
+          var err = new Error("Cannot find module '" + moduleId + "'");
+          err.code = "MODULE_NOT_FOUND";
+          throw err;
         }
-        var p = (n[i] = { exports: {} });
-        e[i][0].call(
-          p.exports,
-          function (r) {
-            var n = e[i][1][r];
-            return o(n || r);
+
+        // 모듈 객체 생성 및 exports 초기화
+        var module = (cache[moduleId] = {
+          exports: {},
+        });
+
+        // 모듈 실행
+        modules[moduleId][0].call(
+          module.exports,
+          function requireInModule(requestPath) {
+            const mappedId = modules[moduleId][1][requestPath];
+            return localRequire(mappedId || requestPath);
           },
-          p,
-          p.exports,
-          r,
-          e,
-          n,
-          t,
+          module,
+          module.exports,
+          browserifyRequire,
+          modules,
+          cache,
+          entryModules,
         );
       }
-      return n[i].exports;
+
+      return cache[moduleId].exports;
     }
-    for (
-      var u = "function" == typeof require && require, i = 0;
-      i < t.length;
-      i++
-    )
-      o(t[i]);
-    return o;
+
+    // Node.js 환경에서 이전 require 캐시 유지용
+    var previousRequire =
+      typeof require === 'function' && require;
+
+    // entryModules 배열의 각 엔트리 모듈 실행
+    for (var i = 0; i < entryModules.length; i++) {
+      localRequire(entryModules[i]);
+    }
+
+    return localRequire;
   }
-  return r;
+
+  return browserifyRequire;
 })()(
   {
     "/Users/rafael/webs/module-system/chapter2/cjs/practices/3_browserify/src/app.js":
