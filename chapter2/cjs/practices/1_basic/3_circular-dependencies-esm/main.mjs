@@ -1,3 +1,3 @@
-import { Button } from './Button.mjs'
+import Button from './Button.mjs'
 
 console.log(Button())

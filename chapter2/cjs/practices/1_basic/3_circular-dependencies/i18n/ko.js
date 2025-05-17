@@ -1,4 +1,6 @@
-const { ButtonI18n } = require('../Button')
+const { ButtonI18n } = require('../ButtonI18n')
+
+console.log(ButtonI18n)
 
 const lang = {
   common: {
