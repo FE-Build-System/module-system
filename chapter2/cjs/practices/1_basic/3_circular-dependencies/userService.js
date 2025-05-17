@@ -1,4 +1,6 @@
-const notificationService = require("./notificationService.js");
+const notificationService = require('./notificationService');
+
+console.log("user", require.cache);
 
 function createUser(name) {
   const user = { id: Date.now(), name };
