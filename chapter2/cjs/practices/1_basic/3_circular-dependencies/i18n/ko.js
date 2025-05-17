@@ -1,4 +1,4 @@
-const { ButtonI18n } = require('../ButtonI18n')
+const { ButtonI18n } = require('../Button')
 
 console.log(ButtonI18n)
 
