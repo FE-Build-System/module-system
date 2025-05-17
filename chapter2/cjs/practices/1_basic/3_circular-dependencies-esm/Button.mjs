@@ -1,4 +1,4 @@
-import { useTranslation } from './i18n'
+import { useTranslation } from './i18n/index.mjs'
 
 export const ButtonI18n = {
   ko: {

@@ -1,5 +1,5 @@
-import ko  from './ko'
-import en  from './en'
+import ko  from './ko.mjs'
+import en  from './en.mjs'
 
 
 const resources = {}
