@@ -1,8 +1,11 @@
 requirejs.config({
   baseUrl: 'lib',
+  paths: {
+    '@': "../src"
+  }
 });
 
-requirejs(['react', 'react-dom', '../App'], function(React, ReactDOM, App) {
+requirejs(['react', 'react-dom', '@/App'], function(React, ReactDOM, App) {
   var root = ReactDOM.createRoot(document.getElementById('root'));
   root.render(React.createElement(App))
 }, function(error) {

@@ -1,4 +1,4 @@
- define(['react', '../HelloAMD'], function (React, HelloAMD) {
+ define(['react', '@/HelloAMD'], function (React, HelloAMD) {
       return function App() {
         return React.createElement('div', null,
           React.createElement('h1', null, 'Welcome'),
