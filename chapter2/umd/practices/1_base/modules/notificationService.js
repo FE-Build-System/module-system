@@ -1,10 +1,10 @@
 (function (root, factory) {
   if (typeof define === 'function' && define.amd) {
-    define([], factory); // AMD
+    define([], factory);
   } else if (typeof module === 'object' && module.exports) {
-    module.exports = factory(); // CommonJS
+    module.exports = factory();
   } else {
-    root.notificationService = factory(); // 브라우저 전역
+    root.notificationService = factory();
   }
 }(this, function () {
   function sendWelcomeEmail(user) {
