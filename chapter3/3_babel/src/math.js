@@ -7,5 +7,6 @@ export function subtract(a, b) {
 }
 
 export default function () {
-  console.log("Hello, Module System!");
+  const msg = { 1: "Hello,", 2: "Module" };
+  console.log({ ...msg, 3: "System!" });
 }
