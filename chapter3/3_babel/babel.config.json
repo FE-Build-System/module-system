@@ -1,0 +1,20 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": false,
+        "corejs": "3.22",
+        "modules": "commonjs"
+      }
+    ]
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-transform-modules-commonjs",
+      {
+        "noInterop": true
+      }
+    ]
+  ]
+}
