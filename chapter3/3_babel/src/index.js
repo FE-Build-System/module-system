@@ -1,4 +1,4 @@
-import math, { add, subtract } from "./math";
+import math, { add, subtract } from "./math.js";
 
 math();
 
