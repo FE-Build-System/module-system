@@ -1,3 +1,7 @@
+module.exports = function () {
+  console.log("test");
+};
+
 const add = (a, b) => {
   console.log("add", a, b);
   for (let i = 0; i < 10; i++) {
