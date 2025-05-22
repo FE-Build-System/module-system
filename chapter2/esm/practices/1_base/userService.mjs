@@ -1,7 +1,8 @@
-export function createUser(name) {
-  return { id: Date.now(), name };
-}
+import notificationService from './notificationService.mjs'
 
-export function getUserProfile(userId) {
-  return { id: userId, email: 'user@example.com' };
+export function createUser(name) {
+  const user = { id: Date.now(), name };
+
+  notificationService.sendWelcomeEmail(user);
+  return user;
 }

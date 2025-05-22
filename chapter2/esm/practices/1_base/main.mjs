@@ -1,5 +1,4 @@
-import userService from './userService.mjs';
+import { createUser } from './userService.mjs';
 
-const user = userService.createUser("Rafael");
+const user = createUser("Rafael");
 console.log("Created user:", user);
-console.log("Found User:", userService.getUserProfile(user.id));
