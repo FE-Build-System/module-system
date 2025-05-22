@@ -7,4 +7,4 @@ const greet = (name) => {
 
 greet("World");
 
-module.exports = greet;
+module.exports = { greet };
