@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "show-graph": "madge --image graph.png main.mjs"
+    "show-graph": "madge --image graph.png main.mjs",
+    "start": "serve ./"
   },
   "author": "",
   "license": "ISC",
