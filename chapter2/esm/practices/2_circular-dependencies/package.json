@@ -2,11 +2,10 @@
   "name": "2_circular-dependencies",
   "version": "1.0.0",
   "description": "",
-  "type": "module",
-  "main": "Button.js",
+  "main": "main.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "show-graph": "madge --image graph.png Button.js"
+    "show-graph": "madge --image graph.png main.mjs"
   },
   "author": "",
   "license": "ISC",
