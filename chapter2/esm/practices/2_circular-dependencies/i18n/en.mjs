@@ -4,7 +4,7 @@ const lang = {
   common: {
     back: 'back',
   },
-  button: { ...ButtonI18n().en },
+  button: { ...ButtonI18n.en },
 }
 
 export default lang
