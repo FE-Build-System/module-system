@@ -11,7 +11,7 @@ const ButtonI18n = {
 
 function Button() {
   const t = useTranslation()
-  return t('confirm')
+  return t('button.confirm')
 }
 
 module.exports = { Button, ButtonI18n }

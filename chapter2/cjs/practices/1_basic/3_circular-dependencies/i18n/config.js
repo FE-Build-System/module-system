@@ -9,7 +9,8 @@ function initI18n() {
 }
 
 function translate(key) {
-  return resources['ko'][key] || key
+  const parts = key.split('.');
+  return parts.reduce((acc, part) => acc?.[part], resources['ko']) || key;
 }
 
 module.exports = {
