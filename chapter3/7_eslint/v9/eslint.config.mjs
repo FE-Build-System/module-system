@@ -1,11 +1,48 @@
-import js from "@eslint/js";
-import globals from "globals";
-import pluginReact from "eslint-plugin-react";
-import { defineConfig } from "eslint/config";
+import js from '@eslint/js';
 
-
-export default defineConfig([
-  { files: ["**/*.{js,mjs,cjs,jsx}"], plugins: { js }, extends: ["js/recommended"] },
-  { files: ["**/*.{js,mjs,cjs,jsx}"], languageOptions: { globals: globals.browser } },
-  pluginReact.configs.flat.recommended,
-]);
+export default [
+  {
+    ignores: ['node_modules/**'],
+  },
+  {
+    languageOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'script',
+      globals: js.configs.recommended.languageOptions.globals,
+    },
+    linterOptions: {
+      reportUnusedDisableDirectives: true,
+    },
+    rules: js.configs.recommended.rules,
+  },
+  {
+    files: ['*.mjs'],
+    languageOptions: {
+      sourceType: 'module',
+      ecmaVersion: 'latest',
+    },
+    env: {
+      browser: true,
+    },
+  },
+  {
+    files: ['*.cjs'],
+    languageOptions: {
+      sourceType: 'script',
+      ecmaVersion: 'latest',
+    },
+    env: {
+      node: true,
+    },
+  },
+  {
+    files: ['./amd/**/*.js'],
+    languageOptions: {
+      sourceType: 'script',
+      ecmaVersion: 'latest',
+    },
+    env: {
+      amd: true,
+    },
+  },
+];
