@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   input: {
     esm: "./src/esm_index.mjs",
     cjs: "./src/cjs_index.js",
@@ -11,8 +11,7 @@ export default {
     // preserveModules: false,
     // inlineDynamicImports: false,
     // dynamicImportInCjs: true,
+    // interop: "auto",
   },
-  plugins: [
-    // "@rollup/plugin-commonjs"
-  ],
+  plugins: [],
 };
