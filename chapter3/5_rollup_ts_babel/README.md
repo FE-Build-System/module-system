@@ -6,9 +6,9 @@
 
 ```js
 // rollup.config.js
-import commonjs from "@rollup/plugin-commonjs";
+const commonjs = require("@rollup/plugin-commonjs");
 
-export default {
+module.exports = {
   input: {
     esm: "./src/esm_index.mjs",
     cjs: "./src/cjs_index.js",
@@ -61,9 +61,10 @@ module.exports.bar = "x";
 
 ```js
 // rollup.config.js
-import babel from "@rollup/plugin-babel";
+const commonjs = require("@rollup/plugin-commonjs");
+const babel = require("@rollup/plugin-babel");
 
-export default {
+module.exports = {
   input: {
     esm: "./src/esm_index.mjs",
     cjs: "./src/cjs_index.js",
@@ -95,28 +96,23 @@ export default {
 
 ### @rollup/plugin-typescript
 
-`npm install --save-dev @rollup/plugin-typescript typescript`
+`npm install --save-dev @rollup/plugin-typescript tslib`
 
 ```js
 // rollup.config.js
-import typescript from "@rollup/plugin-typescript";
+const babel = require("@rollup/plugin-babel");
+const typescript = require("@rollup/plugin-typescript");
 
-export default {
+module.exports = {
   input: {
-    esm: "./src/esm_index.mjs",
-    cjs: "./src/cjs_index.js",
+    ts: "./src/ts_index.ts",
   },
   output: {
     dir: "dist",
     entryFileNames: "[name]-bundle.js",
-    format: "cjs", // amd, cjs, es, umd, iife, system
-    // exports: "auto",
-    // preserveModules: false,
-    // inlineDynamicImports: false,
-    // dynamicImportInCjs: true,
+    format: "cjs",
   },
   plugins: [
-    commonjs(),
     babel({
       babelHelpers: "bundled",
       exclude: "node_modules/**",
@@ -131,8 +127,6 @@ export default {
     }),
     typescript({
       tsconfig: "./tsconfig.json", // 사용할 tsconfig 경로
-      sourceMap: true, // sourcemap 생성 여부
-      inlineSources: true, // 소스맵에 TS 원본 포함 여부
     }),
   ],
 };
@@ -140,16 +134,16 @@ export default {
 
 ### @babel/preset-typescript
 
-`npm install --save-dev @babel/preset-typescript`
+`npm install --save-dev @babel/preset-typescript @rollup/plugin-node-resolve`
 
 ```js
 // rollup.config.js
-import typescript from "@rollup/plugin-typescript";
+const babel = require("@rollup/plugin-babel");
+const resolve = require("@rollup/plugin-node-resolve");
 
-export default {
+module.exports = {
   input: {
-    esm: "./src/esm_index.mjs",
-    cjs: "./src/cjs_index.js",
+    ts: "./src/ts_index.ts",
   },
   output: {
     dir: "dist",
@@ -157,10 +151,13 @@ export default {
     format: "es",
   },
   plugins: [
-    commonjs(),
+    resolve({
+      extensions: [".js", ".ts"],
+    }),
     babel({
       babelHelpers: "bundled",
       exclude: "node_modules/**",
+      extensions: [".js", ".ts"],
       presets: [
         [
           "@babel/preset-env",
