@@ -1,18 +1,14 @@
 {
-  "name": "5_async_dependency",
+  "name": "7_eslint_ts",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
-  "directories": {
-    "lib": "lib"
-  },
+  "main": "index.js",
   "scripts": {
-    "start": "serve ./",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "serve": "^14.2.4"
+  "devDependencies": {
+    "eslint": "^8.57.1"
   }
 }
