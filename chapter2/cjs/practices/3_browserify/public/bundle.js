@@ -12,12 +12,10 @@
           throw err;
         }
 
-        // 모듈 객체 생성 및 exports 초기화
         var module = (cache[moduleId] = {
           exports: {},
         });
 
-        // 모듈 실행
         modules[moduleId][0].call(
           module.exports,
           function requireInModule(requestPath) {
@@ -36,11 +34,9 @@
       return cache[moduleId].exports;
     }
 
-    // Node.js 환경에서 이전 require 캐시 유지용
     var previousRequire =
       typeof require === 'function' && require;
 
-    // entryModules 배열의 각 엔트리 모듈 실행
     for (var i = 0; i < entryModules.length; i++) {
       localRequire(entryModules[i]);
     }
