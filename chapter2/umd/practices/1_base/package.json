@@ -2,10 +2,7 @@
   "name": "base",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
-  "directories": {
-    "lib": "lib"
-  },
+  "main": "main-node.js",
   "scripts": {
     "start": "serve ./",
     "test": "echo \"Error: no test specified\" && exit 1"

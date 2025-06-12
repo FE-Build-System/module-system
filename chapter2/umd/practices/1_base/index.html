@@ -1,9 +1,16 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <script data-main="main-browser" src="lib/require.js"></script>
-  </head>
-  <body>
-    <h1>Hello World</h1>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMD Browser Example</title>
+</head>
+<body>
+    <script src="modules/notificationService.js"></script>
+    <script src="modules/userService.js"></script>
+    <script>
+        const newUser = userService.createUser("Hackurity");
+        console.log("Created user:", newUser);
+    </script>
+</body>
 </html>
